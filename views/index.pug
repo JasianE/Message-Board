@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  a(href=`http://localhost:${process.env.PORT || 3000}/new`): button.compose= 'Post Message'
+  div 
+    for item in messages
+      h1= item.text 
+      h2= item.user
+      h3= item.added
